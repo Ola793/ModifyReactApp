@@ -42,17 +42,11 @@ class Popular extends React.PureComponent {
             <div>
               <SelectedLanguages
                 selectedLanguage = { this.state.selectedLanguage }
-                selectLanguageHandler = {
-                  this.state.repos
-                    ? this.selectLanguage
-                    : () => {
-                        return null;
-                      }
-                }
+                selectLanguageHandler = { this.state.repos ? this.selectLanguage : () => { return null; } }
               />
               <Repos repos = { this.state.repos } />
             </div>
-          ) : (
+          ) : ( 
             <div className = "loader-wrapper">
               <Loader />
             </div>
